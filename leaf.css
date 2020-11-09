@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: peachpuff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  font-family: 'Indie Flower', cursive;
+}
+
+h2 {
+  margin: 2rem;
+}
+
+.blue {
+  color: #155aa7;
+}
+
+#middle {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  animation: jump 2s ease-out infinite;
+}
+
+.body {
+  position: absolute;
+  width: 200px;
+  height: 180px;
+  background: radial-gradient(farthest-side at 140px 60px, #A1c5f9, #155aa7);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.eye {
+  position: absolute;
+  top: 45px;
+  width: 20px;
+  height: 30px;
+  background: radial-gradient(farthest-corner at 20px 30px, #A1c5f9, #155aa7);
+  border-radius: 50%;
+  transform: rotate(-6deg);
+}
+
+.eye::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(closest-side at 10px 5px, white, crimson);
+  border: 1px solid #155aa7;
+  border-radius: 50%;
+}
+
+.eye.one {
+  right: 50%;
+}
+
+.eye.two {
+  right: 15%;
+}
+
+.mouth {
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  width: 30px;
+  height: 40px;
+  background: radial-gradient(farthest-side at 24px 30px, #dc9dd8 20%, #ab2fa3);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border: 1px solid #155aa7;
+  border-top: 0;
+  transform: rotate(-6deg);
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mouth::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 35px;
+  height: 10px;
+  border-radius: 50%;
+  border-bottom: 3px solid #155aa7;
+  transform: translateY(3px) rotate(-6deg);
+}
+
+.foot {
+  position: absolute;
+  top: 100%;
+  width: 50px;
+  height: 80px;
+  background: radial-gradient(farthest-side at 70px 60px, #A1c5f9, #155aa7);
+  border-radius: 50% 40% 50% 40%;
+  box-shadow: inset 3px 16px 10px rgba(0, 0, 0, 0.4);
+}
+
+.foot.one {
+  animation: feet1 2s ease-out infinite;
+}
+
+.foot.two {
+  animation: feet2 2s ease-out infinite;
+}
+
+.leaf {
+  position: absolute;
+  width: 80px;
+  height: 140px;
+  background-image: linear-gradient(to top left, #6bce34 49%, #3e9e1d 49.5%, #3e9e1d 51%, #6bce34 51%);
+  border-radius: 100% 0 / 140px 0px;
+  box-shadow: inset 10px -10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.leaf.one {
+  top: -120px;
+  left: 100px;
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+.leaf.two {
+  top: -120px;
+  left: 70px;
+  border-radius: 100% 0 / 140px 0px;
+  transform: rotateZ(20deg) rotateY(180deg) scale(0.8);
+  box-shadow: inset 40px -40px 30px rgba(0, 0, 0, 0.3);
+  z-index: 9;
+}
+
+.leaf.three {
+  top: -120px;
+  left: -15px;
+  width: 100px;
+  z-index: 11;
+  transform: rotateZ(-80deg) scale(1.2);
+  filter: brightness(1.3);
+}
+
+.leaf.four {
+  top: -60px;
+  left: 0px;
+  width: 70px;
+  z-index: 9;
+  transform: rotateZ(-120deg) scale(1.3);
+  filter: brightness(1);
+}
+
+.leaf.five {
+  top: -80px;
+  left: 0px;
+  width: 60px;
+  z-index: 7;
+  transform: rotateZ(-100deg) scale(1.3);
+  filter: brightness(0.7);
+}
+
+.shadow {
+  position: absolute;
+  top: calc(50% + 180px);
+  left: 40%;
+  width: 200px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: shadow 2s ease-out infinite;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-80px);
+  }
+  60% {
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes feet1 {
+  0%, 100% {
+    transform: translate(50px, 160px) scale(1.1) rotateZ(5deg) rotateX(60deg);
+  }
+  40% {
+    transform: translate(50px, 160px) scale(1.1) rotateZ(5deg) rotateX(0deg);
+  }
+  60% {
+    transform: translate(50px, 160px) scale(1.1) rotateZ(5deg) rotateX(0deg);
+  }
+}
+
+@keyframes feet2 {
+  0%, 100% {
+    transform: translate(120px, 150px) scale(0.95) rotateZ(-10deg) rotateX(60deg);
+  }
+  40% {
+    transform: translate(120px, 155px) scale(0.95) rotateZ(-10deg) rotateX(0deg);
+  }
+  60% {
+    transform: translate(120px, 155px) scale(0.95) rotateZ(-10deg) rotateX(0deg);
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+}
